@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap_lumen.min.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -19,6 +19,63 @@
 <div>The Movie Shack(Working Title) Project</div>
 <!-- img only for testing, to be removed later<!-->
 <img src="img/movie_shack.jpeg"/>
+
+<div>
+	<form class="form-horizontal">
+  <fieldset>
+    <legend>Form</legend>
+    <div class="form-group">
+      <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputYear" class="col-lg-2 control-label">Year</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputYear" placeholder="Year">
+    </div>
+	</div>
+	<div class="form-group">
+      <label for="inputGenre" class="col-lg-2 control-label">Genre</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputGenre" placeholder="Genre">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Synopsis</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputDirector" class="col-lg-2 control-label">Director</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputDirector" placeholder="Director">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputWriter" class="col-lg-2 control-label">Writer</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputWriter" placeholder="Writer">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputStars" class="col-lg-2 control-label">Stars</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputStars" placeholder="Stars (separate with comma)">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>		
+</div>
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
