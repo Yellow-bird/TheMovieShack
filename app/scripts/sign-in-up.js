@@ -1,4 +1,4 @@
-import {submitSignIn, submitSignUp} from 'scripts/sign-in-up-events.js';
+import {submitSignIn, submitSignUp} from '../sign-in-up-events.js';
 
 export function renderSignForm() {
     'use strict';
