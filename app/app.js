@@ -1,6 +1,6 @@
 import {initializeParse} from 'scripts/parse-initializer.js';
-import {renderHome} from 'scripts/home.js';
-import {renderAbout} from 'scripts/about.js';
+import {renderHome} from 'scripts/views/home.js';
+import {renderAbout} from 'scripts/views/about.js';
 import {renderSignForm} from 'scripts/sign-in-up.js';
 //import $ from 'jquery';
 
