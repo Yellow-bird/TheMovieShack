@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d1f4c8c-fdee-40e5-b84e-a56fde8c2309" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Vyara\WebstormProjects\Telerik-JS App-Teamwork\TheMovieShack\app\libs\jquery.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Vyara\WebstormProjects\Telerik-JS App-Teamwork\TheMovieShack\app\scripts\views\sign-form.html" afterPath="$PROJECT_DIR$/app/partials/sign-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/views/home.js" afterPath="$PROJECT_DIR$/app/scripts/views/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="4d1f4c8c-fdee-40e5-b84e-a56fde8c2309" name="Default" comment="" />
     <ignored path="TheMovieShack.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +74,8 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/views/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12948857">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.092491835">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -450,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/views/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12948857">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.092491835">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>
