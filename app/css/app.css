@@ -1,13 +1,28 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
 
 footer{
   padding-top: 20px;
   text-align: center;
+  position: relative;
+}
+
+#movie-details{
+  float: left;
+  width: 60%;
+}
+
+#movie-image img{
+  float: right;
+  width: 35%;
+  height: 70%;
+}
+
+#movie-details-wrapper{
+  width: 90%;
+  margin: 5%;
+  position: absolute;
+  padding: 3%;
+  border: 2px solid lightgray;
+
 }
