@@ -2,6 +2,6 @@ export function renderHome(){
     'use strict';
     var $mainContent = $('#main-content');
 
-    $mainContent.load('Home');
+    $mainContent.html('Home');
     alert('in home');
 }
