@@ -5,8 +5,10 @@ export function renderHome() {
     query.find()
         .then(function (movies) {
             var dbMovies = [];
+            var id = 0;
             movies.forEach(function (movie) {
                 var newMovie = {
+                    id: ++id,
                     title: movie.get('title'),
                     year: movie.get('year'),
                     genre: movie.get('genre')
