@@ -1,4 +1,5 @@
 import user from 'scripts/models/user.js';
+import data from 'scripts/controllers/data.js';
 
 export function submitSignIn() {
     'use strict';
@@ -45,6 +46,16 @@ export function submitSignUp() {
         }
 
         console.log('after ex');
+
+        // pass user to the database
+        data.users.signUp(newUser)
+            .then(function (value) {
+                console.log('success--- ' + value);
+            }, function (reason) {
+                console.log('err--- ' + reason);
+            });
+
+
             //user = new Parse.User();
 
         /*user.set("username", $usernameValue);

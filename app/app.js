@@ -5,6 +5,7 @@ import {renderSignForm} from 'scripts/sign-in-up.js';
 import {renderAddMovie} from 'scripts/views/addMovie.js';
 import {renderMovieDetails} from 'scripts/views/movieDetails.js';
 import {createMovie} from 'scripts/models/movie.js';
+import data from 'scripts/controllers/data.js';
 //import $ from 'jquery';
 
 var app = Sammy('#main-content', function () {
@@ -16,10 +17,23 @@ var app = Sammy('#main-content', function () {
 });
 
 $(document).ready(function() {
+    var userIsSignedIn;
+
     initializeParse();
 
     // since there is no sign out for the moment...
     localStorage.clear();
+
+    userIsSignedIn = data.users.signedIn();
+    if (userIsSignedIn) {
+        console.log('in IF');
+        $('#nav-item-sign-in-up').hide();
+        $('#nav-item-sign-out').show();
+    } else {
+        console.log('in ELSE');
+        $('#nav-item-sign-out').hide();
+        $('#nav-item-sign-in-up').show();
+    }
 
     app.run('#/home');
 }());
