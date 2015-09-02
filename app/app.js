@@ -7,7 +7,6 @@ import {renderMovieDetails} from 'scripts/views/movieDetails.js';
 import {createMovie} from 'scripts/models/movie.js';
 //import $ from 'jquery';
 
-
 var app = Sammy('#main-content', function () {
     this.get('#/home', renderHome);
     this.get('#/signinup', renderSignForm);

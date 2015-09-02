@@ -16,8 +16,15 @@ export function submitMovieDetails() {
         newMovie.set('genre', movie.genre);
 
 
-        newMovie.save().then(function() {
-            alert("yay! it worked");
+        newMovie.save()
+            .then(function(){
+                var query = new Parse.Query(Movie);
+                return query.find();
+            })
+            .then(function(movies) {
+                movies.forEach(function(movie){
+                console.log(movie.get('title'));
+            })
         });
 
         //console.log(movie.title);
