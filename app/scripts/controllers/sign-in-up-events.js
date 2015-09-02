@@ -45,31 +45,18 @@ export function submitSignUp() {
             return;
         }
 
-        console.log('after ex');
-
         // pass user to the database
         data.users.signUp(newUser)
             .then(function (value) {
-                console.log('success--- ' + value);
+                var currentLocation = window.location.href,
+                    nextLocation = currentLocation.substring(0, currentLocation.indexOf('#')) + '#/home';
+
+                window.location.href = nextLocation;
+
+                $('#nav-item-sign-in-up').hide();
+                $('#nav-item-sign-out').show();
             }, function (reason) {
-                console.log('err--- ' + reason);
+                alert(reason);
             });
-
-
-            //user = new Parse.User();
-
-        /*user.set("username", $usernameValue);
-        user.set("password", $passwordValue);
-        user.set("email", $mailValue);
-
-        user.signUp(null, {
-            success: function(user) {
-                console.log(user.getUsername() + ' registered!');
-            },
-            error: function(user, error) {
-                // Show the error message somewhere and let the user try again.
-                console.log("Error: " + error.code + " " + error.message);
-            }
-        });*/
     });
 }
