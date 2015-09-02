@@ -1,4 +1,5 @@
 import user from 'scripts/models/user.js';
+
 export function submitSignIn() {
     'use strict';
     var $btnSubmit = $('#btn-sign-in');
