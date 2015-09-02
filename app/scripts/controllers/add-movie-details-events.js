@@ -10,26 +10,12 @@ export function submitMovieDetails() {
 
         //can be later moved to a save function
         var newMovie = new Movie();
-
         newMovie.set('title', movie.title);
         newMovie.set('year', movie.year);
         newMovie.set('genre', movie.genre);
 
 
         newMovie.save()
-            .then(function(){
-                var query = new Parse.Query(Movie);
-                return query.find();
-            })
-            .then(function(movies) {
-                movies.forEach(function(movie){
-                console.log(movie.get('title'));
-            })
-        });
-
-        //console.log(movie.title);
-        //console.log(movie.year);
-        //console.log(movie.genre);
     })
 
 }
