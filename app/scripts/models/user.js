@@ -1,4 +1,4 @@
-var user = (function () {
+export default (function () {
     'use strict';
     const USERNAME_MIN_LENGTH = 5,
         USERNAME_MAX_LENGTH = 15,
@@ -98,5 +98,3 @@ var user = (function () {
         return isSuperUser;
     }
 }());
-
-export default user;

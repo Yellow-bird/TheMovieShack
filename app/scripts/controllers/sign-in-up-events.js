@@ -1,3 +1,4 @@
+import user from 'scripts/models/user.js';
 export function submitSignIn() {
     'use strict';
     var $btnSubmit = $('#btn-sign-in');
@@ -24,10 +25,14 @@ export function submitSignUp() {
     $btnSubmit.on('click', function () {
         var $usernameValue = $('#new-username-input').val(),
             $passwordValue = $('#new-password-input').val(),
-            $mailValue = $('new-mail-input').val(),
-            user = new Parse.User();
+            $mailValue = $('#new-mail-input').val(),
+            newUser = Object.create(user).init($usernameValue, $passwordValue, $mailValue);
 
-        user.set("username", $usernameValue);
+        console.log(newUser);
+
+            //user = new Parse.User();
+
+        /*user.set("username", $usernameValue);
         user.set("password", $passwordValue);
         user.set("email", $mailValue);
 
@@ -39,6 +44,6 @@ export function submitSignUp() {
                 // Show the error message somewhere and let the user try again.
                 console.log("Error: " + error.code + " " + error.message);
             }
-        });
+        });*/
     });
 }
