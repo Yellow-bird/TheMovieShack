@@ -26,7 +26,6 @@ $(document).ready(function() {
 
     userIsSignedIn = data.users.signedIn();
     if (userIsSignedIn) {
-        console.log('in IF');
         $('#nav-item-sign-in-up').hide();
         $('#nav-item-sign-out').show();
     } else {

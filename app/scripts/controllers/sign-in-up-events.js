@@ -9,14 +9,14 @@ export function submitSignIn() {
        var $usernameValue = $('#registered-username-input').val(),
            $passwordValue = $('#registered-password-input').val();
 
-        Parse.User.logIn($usernameValue, $passwordValue, {
-            success: function(data) {
-                console.log('Logged in');
-            },
-            error: function(user, error) {
-                console.log('Login failed');
-            }
-        });
+
+        data.users.signIn($usernameValue, $passwordValue)
+            .then(function (value) {
+                userSignsInSuccessfully();
+            }, function (reason) {
+                $('#registered-username-input').val('Invalid credentials.');
+                $('#registered-password-input').val('Invalid credentials.');
+            });
     });
 }
 
@@ -48,15 +48,19 @@ export function submitSignUp() {
         // pass user to the database
         data.users.signUp(newUser)
             .then(function (value) {
-                var currentLocation = window.location.href,
-                    nextLocation = currentLocation.substring(0, currentLocation.indexOf('#')) + '#/home';
-
-                window.location.href = nextLocation;
-
-                $('#nav-item-sign-in-up').hide();
-                $('#nav-item-sign-out').show();
+                userSignsInSuccessfully();
             }, function (reason) {
                 alert(reason);
             });
     });
+}
+
+function userSignsInSuccessfully() {
+    var currentLocation = window.location.href,
+        nextLocation = currentLocation.substring(0, currentLocation.indexOf('#')) + '#/home';
+
+    window.location.href = nextLocation;
+
+    $('#nav-item-sign-in-up').hide();
+    $('#nav-item-sign-out').show();
 }
