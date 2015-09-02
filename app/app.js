@@ -4,6 +4,7 @@ import {renderAbout} from 'scripts/views/about.js';
 import {renderSignForm} from 'scripts/sign-in-up.js';
 import {renderAddMovie} from 'scripts/views/addMovie.js';
 import {renderMovieDetails} from 'scripts/views/movieDetails.js';
+import {createMovie} from 'scripts/models/movie.js';
 //import $ from 'jquery';
 
 
