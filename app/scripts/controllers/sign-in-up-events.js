@@ -26,9 +26,20 @@ export function submitSignUp() {
         var $usernameValue = $('#new-username-input').val(),
             $passwordValue = $('#new-password-input').val(),
             $mailValue = $('#new-mail-input').val(),
-            newUser = Object.create(user).init($usernameValue, $passwordValue, $mailValue);
+            newUser,
+            exMessage,
+            failingProperty,
+            displayMessage;
 
-        console.log(newUser);
+        try {
+            newUser = Object.create(user).init($usernameValue, $passwordValue, $mailValue);
+        }
+        catch(ex) {
+            exMessage = ex.message;
+            failingProperty = exMessage.substring(0, exMessage.indexOf('!'));
+            displayMessage = exMessage.substring(failingProperty.length + 1);
+            $('#new-' + failingProperty + '-input').val(displayMessage);
+        }
 
             //user = new Parse.User();
 

@@ -25,7 +25,7 @@ export default (function () {
             var isValid = checkIfValidUsername(value);
 
             if (!isValid) {
-                throw new Error('Expected username to contain Latin letters and/or digits (5-15 characters).');
+                throw new Error('username!Only Latin letters and/or digits (5-15 characters).');
             }
 
             this._username = value;
