@@ -36,7 +36,14 @@
     </nav>
 </header>
 <main id="main-content">
-    Main content
+    <h1 id="h1">Loading content</h1>
+
+    <div class="progress">
+  <div id="loading" class="progress-bar progress-bar-striped active" role="progressbar"
+  style="width:0%">
+    
+  </div>
+</div>
 </main>
 <footer>
     &copy;2015 A Yellow-Bird Project
@@ -52,5 +59,17 @@
 <script src="libs/underscore-min.js"></script>
 <script src="libs/sammy.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
+<script>
+
+    $('#h1').attr('align', "center");
+    $(window).load(function() {
+
+        var value = 0;
+        while(value < 100) {
+            value += 1;
+            $("#loading").width(value + '%');
+            }
+        });
+</script>
 </body>
 </html>
