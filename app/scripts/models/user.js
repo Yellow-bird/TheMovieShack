@@ -2,7 +2,8 @@ export default (function () {
     'use strict';
     const USERNAME_MIN_LENGTH = 5,
         USERNAME_MAX_LENGTH = 15,
-        SUPER_USERS = ['vyara_hristova@yahoo.de', 'domat777@gmail.com', 'denny.dimitrova@abv.bg'];
+        SUPER_USERS = ['vyara_hristova@yahoo.de', 'domat777@gmail.com', 'denny.dimitrova@abv.bg'],
+        PASSWORD_MIN_LENGTH = 5;
 
     var user = {
         init: function(username, password, email) {
@@ -37,7 +38,11 @@ export default (function () {
             return this._password;
         },
         set: function(value) {
-            // TODO add validation
+            var isValid = checkIfValidPassword(value);
+
+            if (!isValid) {
+                throw new Error('password!Minimum 5 characters.');
+            }
 
             this._password = value;
         }
@@ -48,7 +53,11 @@ export default (function () {
             return this._email;
         },
         set: function(value) {
-            // TODO add validation
+            var isValid = checkIfValidEmail(value);
+
+            if (!isValid) {
+                throw new Error('mail!Invaild e-mail address.');
+            }
 
             this._email = value;
         }
@@ -96,5 +105,20 @@ export default (function () {
         });
 
         return isSuperUser;
+    }
+
+    function checkIfValidPassword(password) {
+        var passwordLen = password.length;
+
+        if (passwordLen < PASSWORD_MIN_LENGTH) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function checkIfValidEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
     }
 }());

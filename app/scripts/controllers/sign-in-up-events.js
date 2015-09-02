@@ -31,6 +31,7 @@ export function submitSignUp() {
             failingProperty,
             displayMessage;
 
+        // checks if client-side user validation passes
         try {
             newUser = Object.create(user).init($usernameValue, $passwordValue, $mailValue);
         }
@@ -39,8 +40,10 @@ export function submitSignUp() {
             failingProperty = exMessage.substring(0, exMessage.indexOf('!'));
             displayMessage = exMessage.substring(failingProperty.length + 1);
             $('#new-' + failingProperty + '-input').val(displayMessage);
+            return;
         }
 
+        console.log('after ex');
             //user = new Parse.User();
 
         /*user.set("username", $usernameValue);
