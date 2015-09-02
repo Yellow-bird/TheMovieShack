@@ -1,4 +1,4 @@
-import {submitSignIn, submitSignUp} from '../sign-in-up-events.js';
+import {submitSignIn, submitSignUp} from 'scripts/controllers/sign-in-up-events.js';
 
 export function renderSignForm() {
     'use strict';
@@ -10,7 +10,7 @@ export function renderSignForm() {
         return;
     }
 
-    $.ajax('./partials/sign-form.html', {
+    $.ajax('./templates/sign-form.html', {
         success: function(partialHtml) {
             $mainContent.html(partialHtml);
             submitSignIn();
