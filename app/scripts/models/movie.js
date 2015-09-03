@@ -1,4 +1,4 @@
-export function createMovie(title, year, genre) {
+export function createMovie(title, year, genre, director) {
     var movie = (function () {
         var movie = Object.create({});
 
@@ -7,6 +7,7 @@ export function createMovie(title, year, genre) {
                 this.title = title;
                 this.year = year;
                 this.genre = genre;
+                this.director = director;
                 return this;
             }
         });
@@ -43,6 +44,18 @@ export function createMovie(title, year, genre) {
                 //some validation if needed
 
                 this._genre = value;
+            }
+        });
+
+        Object.defineProperty(movie, 'director', {
+            get: function () {
+                return this._director;
+            },
+
+            set: function (value) {
+                //some validation if needed
+
+                this._director = value;
             }
         });
 

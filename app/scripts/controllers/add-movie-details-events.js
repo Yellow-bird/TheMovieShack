@@ -6,7 +6,8 @@ export function submitMovieDetails() {
         var movieTitle = $('#inputTitle').val();
         var movieYear = $('#select').val();
         var movieGenre = $('#inputGenre').val();
-        var movie = createMovie(movieTitle, movieYear, movieGenre);
+        var movieDirector = $('#inputDirector').val();
+        var movie = createMovie(movieTitle, movieYear, movieGenre, movieDirector);
 
         data.movies.addToDataBase(movie);
     })
