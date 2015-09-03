@@ -106,6 +106,7 @@ var data = (function () {
                             title: movie.get('title'),
                             year: movie.get('year'),
                             genre: movie.get('genre'),
+                            rating: movie.get('rating'),
                             director: movie.get('director'),
                             summary: movie.get('summary')
                         };
