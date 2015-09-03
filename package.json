@@ -53,6 +53,7 @@
     "karma-junit-reporter": "^0.2.2",
     "node.js": "0.0.0",
     "protractor": "^2.2.0",
+    "sammy": "^0.7.6",
     "shelljs": "^0.2.6"
   },
   "author": ""
