@@ -153,6 +153,26 @@ var data = (function () {
         return promise;
     }
 
+    function reviewAddToDatabase(review) {
+        var promise = new Promise(function (resolve, reject) {
+            var Review = Parse.Object.extend('Review'),
+             newReview = new Review();
+
+             newReview.save({
+                 content: review.content,
+                 movieId: review.movieId,
+                 movieTitle: review.movieTitle,
+                 author: review.author
+             }).then(function (data) {
+                    resolve(data);
+             }, function (reason) {
+                 reject(reason);
+             });
+        });
+
+        return promise;
+    }
+
     return {
         users: {
             signUp: userSignUp,
@@ -167,6 +187,9 @@ var data = (function () {
             getAllMoviesFromDataBase: getAllMovieDetailsFromDataBase,
             setRating: setMovieRating
 
+        },
+        reviews: {
+            addToDataBase: reviewAddToDatabase
         }
     }
 }());
