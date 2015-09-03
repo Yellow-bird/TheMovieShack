@@ -140,7 +140,8 @@ var data = (function () {
                 .then(function (dbMovie) {
                     var rating = +dbMovie.get('rating') + +newRating;
                     var ratingCount = +dbMovie.get('ratingsCount');
-                    dbMovie.set('rating', rating/(ratingCount + 1));
+                    var averageRating = rating /(ratingCount + 1);
+                    dbMovie.set('rating', averageRating);
                     dbMovie.set('ratingsCount', ratingCount + 1);
 
                     resolve(dbMovie.save());
