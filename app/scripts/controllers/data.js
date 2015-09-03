@@ -125,6 +125,26 @@ var data = (function () {
         return promise;
     }
 
+    function setMovieRating(movie, newRating) {
+        var promise = new Promise(function (resolve, reject) {
+            var Movie = Parse.Object.extend('Movie');
+            var query = new Parse.Query(Movie);
+            query.get(movie.originalId)
+                .then(function (dbMovie) {
+                    var rating = +dbMovie.get('rating') + +newRating;
+                    var ratingCount = +dbMovie.get('ratingsCount');
+                    dbMovie.set('rating', rating/(ratingCount + 1));
+                    dbMovie.set('ratingsCount', ratingCount + 1);
+
+                    resolve(dbMovie.save());
+                });
+
+
+        });
+
+        return promise;
+    }
+
     return {
         users: {
             signUp: userSignUp,
@@ -135,7 +155,8 @@ var data = (function () {
         },
         movies: {
             addToDataBase: addMovieToDataBase,
-            getAllMoviesFromDataBase: getAllMovieDetailsFromDataBase
+            getAllMoviesFromDataBase: getAllMovieDetailsFromDataBase,
+            setRating: setMovieRating
 
         }
     }
