@@ -10,7 +10,12 @@ export function submitMovieDetails() {
         var movieSummary = $('#inputSummary').val();
         var movie = createMovie(movieTitle, movieYear, movieGenre, movieDirector, movieSummary);
 
-        data.movies.addToDataBase(movie);
+        data.movies.addToDataBase(movie).
+            then(function (value) {
+                var currentLocation = window.location.href,
+                    nextLocation = currentLocation + 'TheMovieShack/app/index.html#/home';
+                window.location.href = nextLocation;
+            });
     })
 
 }
