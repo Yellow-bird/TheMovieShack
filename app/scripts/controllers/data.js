@@ -47,11 +47,39 @@ var data = (function () {
         return true;
     }
 
+    function userCanCreateMovie() {
+        var currentUser = Parse.User.current(),
+            isSuper;
+
+        if (currentUser === null) {
+            return false;
+        }
+
+        isSuper = currentUser.get('isSuperUser');
+
+        if (!isSuper) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function userSignOut() {
+        var promise = new Promise(function (resolve, reject) {
+            Parse.User.logOut();
+            resolve('signedOut');
+        });
+
+        return promise;
+    }
+
     return {
         users: {
             signUp: userSignUp,
             signIn: userSignIn,
-            signedIn: userIsSignedIn
+            signedIn: userIsSignedIn,
+            canCreateMovie: userCanCreateMovie,
+            signOut: userSignOut
         },
         movies: {
 
