@@ -28,14 +28,23 @@ export function addReview(currentMovie) {
             return;
         }
 
-
-        // testing
-        //console.log(newReview);
-
-        // check if there is a user signed in - done
-        // create a new Review obj - done
-        // wrap it in try catch - done
-            // if no error - attach it to current movie in db; attach it to current user reviews
-            // else - display somewhere the error (could be in #review-content)
+        data.reviews.addToDataBase(newReview)
+            .then(function (value) {
+                alert('Review added successfully.');
+                navigateToHome();
+            }, function (reason) {
+                alert('Review was not added. Please, excuse us!');
+                navigateToHome();
+            });
     });
+}
+
+function navigateToHome() {
+    var currentLocation = window.location.href,
+        nextLocation = currentLocation.substring(0, currentLocation.indexOf('#')) + '#/home';
+
+    window.location.href = nextLocation;
+
+    $('#nav-item-sign-in-up').hide();
+    $('#nav-item-sign-out').show();
 }
