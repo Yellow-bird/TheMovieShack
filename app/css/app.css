@@ -21,9 +21,9 @@
 
 }
 
-#add-review-btn
+#add-review-btn, #rate-btn
 {
-  margin-top: 2%;
+  margin: 2%;
   float: right;
 }
 
