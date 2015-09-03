@@ -1,12 +1,6 @@
 /* app css stylesheet */
 
 
-footer{
-  padding-top: 20px;
-  text-align: center;
-  position: relative;
-}
-
 #movie-details{
   float: left;
   width: 60%;
@@ -25,4 +19,16 @@ footer{
   padding: 3%;
   border: 2px solid lightgray;
 
+}
+
+#add-review-btn
+{
+  margin-top: 2%;
+  float: right;
+}
+
+footer{
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
 }
