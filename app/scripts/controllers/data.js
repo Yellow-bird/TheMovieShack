@@ -22,22 +22,6 @@ var data = (function () {
         return promise;
     }
 
-    //user = new Parse.User();
-
-    /*user.set("username", $usernameValue);
-     user.set("password", $passwordValue);
-     user.set("email", $mailValue);
-
-     user.signUp(null, {
-     success: function(user) {
-     console.log(user.getUsername() + ' registered!');
-     },
-     error: function(user, error) {
-     // Show the error message somewhere and let the user try again.
-     console.log("Error: " + error.code + " " + error.message);
-     }
-     });*/
-
     function userSignIn(username, password) {
         var promise = new Promise(function (resolve, reject) {
             Parse.User.logIn(username, password, {
@@ -52,15 +36,6 @@ var data = (function () {
 
         return promise;
     }
-
-    /*Parse.User.logIn($usernameValue, $passwordValue, {
-        success: function(data) {
-            console.log('Logged in');
-        },
-        error: function(user, error) {
-            console.log('Login failed');
-        }
-    });*/
 
     function userIsSignedIn() {
         var currentUser = Parse.User.current();

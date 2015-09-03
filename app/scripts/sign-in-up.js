@@ -1,11 +1,12 @@
 import {submitSignIn, submitSignUp} from 'scripts/controllers/sign-in-up-events.js';
+import data from 'scripts/controllers/data.js';
 
 export function renderSignForm() {
     'use strict';
-    var currentUser = Parse.User.current(),
+    var userIsSignedIn = data.users.signedIn(),
         $mainContent = $('#main-content');
 
-    if (currentUser !== null) {
+    if (userIsSignedIn) {
         $mainContent.html('You are already signed in.');
         return;
     }

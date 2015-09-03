@@ -29,7 +29,6 @@ $(document).ready(function() {
         $('#nav-item-sign-in-up').hide();
         $('#nav-item-sign-out').show();
     } else {
-        console.log('in ELSE');
         $('#nav-item-sign-out').hide();
         $('#nav-item-sign-in-up').show();
     }
