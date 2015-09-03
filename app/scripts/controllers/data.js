@@ -82,8 +82,9 @@ var data = (function () {
             newMovie.set('year', movie.year);
             newMovie.set('genre', movie.genre);
             newMovie.set('director', movie.director);
+            newMovie.set('summary', movie.summary);
 
-            newMovie.save();
+            resolve(newMovie.save());
 
         });
 
@@ -104,7 +105,8 @@ var data = (function () {
                             title: movie.get('title'),
                             year: movie.get('year'),
                             genre: movie.get('genre'),
-                            director: movie.get('director')
+                            director: movie.get('director'),
+                            summary: movie.get('summary')
                         };
                         dbMovies.push(newMovie);
                     });

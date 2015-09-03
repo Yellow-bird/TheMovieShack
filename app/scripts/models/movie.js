@@ -1,4 +1,4 @@
-export function createMovie(title, year, genre, director) {
+export function createMovie(title, year, genre, director, summary) {
     var movie = (function () {
         var movie = Object.create({});
 
@@ -8,6 +8,7 @@ export function createMovie(title, year, genre, director) {
                 this.year = year;
                 this.genre = genre;
                 this.director = director;
+                this.summary = summary;
                 return this;
             }
         });
@@ -59,10 +60,23 @@ export function createMovie(title, year, genre, director) {
             }
         });
 
+        Object.defineProperty(movie, 'summary', {
+            get: function () {
+                return this._summary;
+            },
+
+            set: function (value) {
+                //some validation if needed
+
+                this._summary = value;
+            }
+        });
+
         return movie;
     }());
 
-    return Object.create(movie).init(title, year, genre);
+
+    return Object.create(movie).init(title, year, genre, director, summary);
 }
 
 //var movie = createMovie('Terminator', 1986, 'Sci fi');
