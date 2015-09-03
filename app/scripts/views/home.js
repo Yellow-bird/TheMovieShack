@@ -2,7 +2,7 @@ import data from 'scripts/controllers/data.js';
 export function renderHome() {
     var $mainContent = $('#main-content');
     var dbMovies = [];
-    data.movies.getAllMoviesFromDataBase(dbMovies)
+    data.movies.getAllMoviesFromDataBase()
         .then(function (dbMovies) {
             $.ajax('templates/movie-table-main-menu.html', {
                 success: function (template) {

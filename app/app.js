@@ -22,6 +22,7 @@ var app = Sammy('#main-content', function () {
     this.get('#/about', renderAbout);
     this.get('#/addamovie', renderAddMovie);
     this.get('#/moviedetailsaliensample', renderMovieDetails);
+
 });
 
 $(document).ready(function() {

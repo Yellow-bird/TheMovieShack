@@ -89,10 +89,11 @@ var data = (function () {
         return promise;
     }
 
-    function getAllMovieDetailsFromDataBase(dbMovies) {
+    function getAllMovieDetailsFromDataBase() {
         var promise = new Promise(function (resolve, reject) {
             var Movie = Parse.Object.extend('Movie');
             var query = new Parse.Query(Movie);
+            var dbMovies = [];
             query.find()
                 .then(function (movies) {
                     var id = 0;
