@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,58 +11,65 @@
     <link rel="stylesheet" href="css/bootstrap_lumen.min.css">
     <script src="//www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 </head>
+
 <body>
 
-<!-- img only for testing, to be removed later<!-->
-<img src="img/movie_shack.jpeg"/>
-<header>
-    <h1>
-        The Movie Shack(Working Title) Project
-    </h1>
-    <nav>
-        <ul class="nav nav-tabs">
-            <li>
-                <a href="#/home">Home</a>
-            </li>
-            <li>
-                <a href="#/about">About</a>
-            </li>
-            <li id="nav-item-sign-in-up">
-                <a href="#/signinup">Sign in/up</a>
-            </li>
-            <li id="nav-item-sign-out">
-                <a href="#/signout">Sign out</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main id="main-content">
-    <h1 id="h1">Loading content</h1>
+    <!-- img only for testing, to be removed later<!-->
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive" src="img/movie_shack.jpeg" />
+        </div>
 
-    <div class="progress">
-  <div id="loading" class="progress-bar progress-bar-striped active" role="progressbar"
-  style="width:0%">
-    
-  </div>
-</div>
-</main>
-<footer>
-    &copy;2015 A Yellow-Bird Project
-</footer>
+        <div class="row">
+            <header>
+                <h1>
+                The Movie Shack(Working Title) Project
+            </h1>
 
-<script src="libs/system.js"></script>
-<script>
-    System.import('app.js');
-</script>
-<script src="scripts/config.js"></script>
-<script src="libs/jquery-2.1.4.min.js"></script>
-<script src="libs/handlebars-v3.0.3.js"></script>
-<script src="libs/underscore-min.js"></script>
-<script src="libs/sammy.js"></script>
-<script src="scripts/bootstrap.min.js"></script>
-<script>
+                <nav class="row">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#/about">About</a>
+                        </li>
+                        <li id="nav-item-sign-in-up">
+                            <a href="#/signinup">Sign in/up</a>
+                        </li>
+                        <li id="nav-item-sign-out">
+                            <a href="#/signout">Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
 
-    $('#h1').attr('align', "center");
+        <main id="main-content">
+            <h1 id="h1">Loading content</h1>
+
+            <div class="progress">
+                <div id="loading" class="progress-bar progress-bar-striped active" role="progressbar" style="width:0%">
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            &copy;2015 A Yellow-Bird Project
+        </footer>
+    </div>
+    <script src="libs/system.js"></script>
+    <script>
+        System.import('app.js');
+    </script>
+    <script src="scripts/config.js"></script>
+    <script src="libs/jquery-2.1.4.min.js"></script>
+    <script src="libs/handlebars-v3.0.3.js"></script>
+    <script src="libs/underscore-min.js"></script>
+    <script src="libs/sammy.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script>
+        $('#h1').attr('align', "center");
     $(window).load(function() {
 
         var value = 0;
@@ -70,6 +78,7 @@
             $("#loading").width(value + '%');
             }
         });
-</script>
+    </script>
 </body>
+
 </html>
