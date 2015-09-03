@@ -1,5 +1,6 @@
 import {createMovie} from 'scripts/models/movie.js';
 import data from 'scripts/controllers/data.js';
+
 export function submitMovieDetails() {
     var $submitButton = $('#submit-movie-details-btn');
     $submitButton.on('click', function () {
