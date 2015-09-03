@@ -7,7 +7,7 @@ export function renderAddMovie() {
     $.ajax('templates/add-movie-form.html', {
         success: function (partialHtml) {
             $mainContent.html(partialHtml);
-            submitMovieDetails()
+            submitMovieDetails();
         }
     });
 }
