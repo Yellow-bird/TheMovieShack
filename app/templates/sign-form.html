@@ -1,11 +1,36 @@
-<div id="sign-in-form">
-    <input type="text" id="registered-username-input" placeholder="Username">
-    <input type="text" id="registered-password-input" placeholder="Password">
-    <button id="btn-sign-in">Sign in</button>
+<div class="well well-lg">
+    <form role="form" id="sign-in-form">
+        <div class="row form-group">
+            <label class="col-md-2" for="registered-username-input">Username:</label>
+            <input class="col-md-10 form-control" type="text" id="registered-username-input" placeholder="Username">
+        </div>
+
+        <div class="row form-group">
+            <label class="col-md-2" for="registered-password-input">Password:</label>
+            <input class="col-md-10 form-control" type="text" id="registered-password-input" placeholder="Password">
+        </div>
+        <button class="btn btn-default" id="btn-sign-in">Sign in</button>
+    </form>
 </div>
-<div id="sign-up-form">
-    <input type="text" id="new-username-input" placeholder="Username">
-    <input type="text" id="new-password-input" placeholder="Password">
-    <input type="text" id="new-mail-input" placeholder="E-mail">
-    <button id="btn-sign-up">Sign up</button>
+
+<div class="well well-lg">
+    <form role="form" id="sign-up-form">
+        <div class="form-group">
+            <div class="row form-group row">
+                <label class="col-md-2" for="new-username-input">Desired username:</label>
+                <input class="col-md-10 form-control" type="text" id="new-username-input" placeholder="Username">
+            </div>
+
+            <div class="row form-group">
+                <label class="col-md-2" for="new-password-input">Password:</label>
+                <input class="col-md-10 form-control" type="text" id="new-password-input" placeholder="Password">
+            </div>
+
+            <div class="row form-group">
+                <label class="col-md-2" for="new-mail-input">E-mail:</label>
+                <input class="col-md-10 form-control" type="text" id="new-mail-input" placeholder="E-mail">
+            </div>
+            <button class="btn btn-default" id="btn-sign-up">Sign up</button>
+        </div>
+    </form>
 </div>
