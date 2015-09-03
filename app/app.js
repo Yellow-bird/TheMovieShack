@@ -1,4 +1,4 @@
-import {initializeParse} from 'scripts/parse-initializer.js';
+import backendServices from 'scripts/backend-services.js';
 import {renderHome} from 'scripts/views/home.js';
 import {renderAbout} from 'scripts/views/about.js';
 import {renderSignForm} from 'scripts/sign-in-up.js';
@@ -27,7 +27,7 @@ var app = Sammy('#main-content', function () {
 $(document).ready(function() {
     var userIsSignedIn;
 
-    initializeParse();
+    backendServices.start();
 
     userIsSignedIn = data.users.signedIn();
     if (userIsSignedIn) {
