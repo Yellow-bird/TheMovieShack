@@ -1,22 +1,9 @@
+import data from 'scripts/controllers/data.js';
 export function renderHome() {
-    var Movie = Parse.Object.extend('Movie');
-    var query = new Parse.Query(Movie);
     var $mainContent = $('#main-content');
-    query.find()
-        .then(function (movies) {
-            var dbMovies = [];
-            var id = 0;
-            movies.forEach(function (movie) {
-                var newMovie = {
-                    id: ++id,
-                    title: movie.get('title'),
-                    year: movie.get('year'),
-                    genre: movie.get('genre')
-                };
-                dbMovies.push(newMovie);
-            });
-            return dbMovies;
-        }).then(function (dbMovies) {
+    var dbMovies = [];
+    data.movies.getAllMoviesFromDataBase(dbMovies)
+        .then(function (dbMovies) {
             $.ajax('templates/movie-table-main-menu.html', {
                 success: function (template) {
                     template = $(template);
@@ -25,7 +12,5 @@ export function renderHome() {
                     $mainContent.html(partial);
                 }
             })
-        }
-    );
-
+        })
 }

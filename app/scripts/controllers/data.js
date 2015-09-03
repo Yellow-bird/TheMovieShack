@@ -25,9 +25,9 @@ var data = (function () {
     function userSignIn(username, password) {
         var promise = new Promise(function (resolve, reject) {
             Parse.User.logIn(username, password, {
-               success: function (user) {
-                   resolve(user);
-               },
+                success: function (user) {
+                    resolve(user);
+                },
                 error: function (user, error) {
                     reject(error.message);
                 }
@@ -82,8 +82,31 @@ var data = (function () {
             newMovie.set('year', movie.year);
             newMovie.set('genre', movie.genre);
 
-            newMovie.save()
+            newMovie.save();
 
+        });
+
+        return promise;
+    }
+
+    function getAllMovieDetailsFromDataBase(dbMovies) {
+        var promise = new Promise(function (resolve, reject) {
+            var Movie = Parse.Object.extend('Movie');
+            var query = new Parse.Query(Movie);
+            query.find()
+                .then(function (movies) {
+                    var id = 0;
+                    movies.forEach(function (movie) {
+                        var newMovie = {
+                            id: ++id,
+                            title: movie.get('title'),
+                            year: movie.get('year'),
+                            genre: movie.get('genre')
+                        };
+                        dbMovies.push(newMovie);
+                    });
+                    resolve(dbMovies);
+                });
         });
 
         return promise;
@@ -98,8 +121,8 @@ var data = (function () {
             signOut: userSignOut
         },
         movies: {
-            addToDataBase: addMovieToDataBase
-
+            addToDataBase: addMovieToDataBase,
+            getAllMoviesFromDataBase: getAllMovieDetailsFromDataBase
 
         }
     }

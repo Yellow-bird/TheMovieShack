@@ -9,17 +9,6 @@ export function submitMovieDetails() {
         var movie = createMovie(movieTitle, movieYear, movieGenre);
 
         data.movies.addToDataBase(movie);
-
-        //var Movie = Parse.Object.extend('Movie');
-        //
-        ////can be later moved to a save function
-        //var newMovie = new Movie();
-        //newMovie.set('title', movie.title);
-        //newMovie.set('year', movie.year);
-        //newMovie.set('genre', movie.genre);
-        //
-        //
-        //newMovie.save()
     })
 
 }
