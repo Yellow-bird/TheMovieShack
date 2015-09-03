@@ -73,6 +73,22 @@ var data = (function () {
         return promise;
     }
 
+    function addMovieToDataBase(movie) {
+        var promise = new Promise(function (resolve, reject) {
+            var Movie = Parse.Object.extend('Movie');
+
+            var newMovie = new Movie();
+            newMovie.set('title', movie.title);
+            newMovie.set('year', movie.year);
+            newMovie.set('genre', movie.genre);
+
+            newMovie.save()
+
+        });
+
+        return promise;
+    }
+
     return {
         users: {
             signUp: userSignUp,
@@ -82,6 +98,8 @@ var data = (function () {
             signOut: userSignOut
         },
         movies: {
+            addToDataBase: addMovieToDataBase
+
 
         }
     }
