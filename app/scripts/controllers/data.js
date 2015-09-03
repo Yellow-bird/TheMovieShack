@@ -82,6 +82,7 @@ var data = (function () {
             newMovie.set('year', movie.year);
             newMovie.set('genre', movie.genre);
             newMovie.set('rating', 0);
+            newMovie.set('ratingsCount', 0);
             newMovie.set('director', movie.director);
             newMovie.set('summary', movie.summary);
 
