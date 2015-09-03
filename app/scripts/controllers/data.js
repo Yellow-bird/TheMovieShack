@@ -103,6 +103,7 @@ var data = (function () {
                     movies.forEach(function (movie) {
                         var newMovie = {
                             id: ++id,
+                            originalId: movie.id,
                             title: movie.get('title'),
                             year: movie.get('year'),
                             genre: movie.get('genre'),
@@ -110,6 +111,10 @@ var data = (function () {
                             director: movie.get('director'),
                             summary: movie.get('summary')
                         };
+
+                        // testing
+                        //console.log(newMovie.originalId);
+
                         dbMovies.push(newMovie);
                     });
                     resolve(dbMovies);

@@ -1,4 +1,8 @@
 import data from 'scripts/controllers/data.js';
+import {addReview} from 'scripts/controllers/add-review-event.js';
+
+var movie;
+
 export function renderMovieDetails(id){
     var $mainContent = $('#main-content');
 
@@ -8,7 +12,7 @@ export function renderMovieDetails(id){
                 success: function (template) {
                     template = $(template);
                     var homeTemplate = Handlebars.compile(template.html());
-                    var movie = dbMovies.filter(function(dbMovie){
+                    movie = dbMovies.filter(function(dbMovie){
                         return dbMovie.id == id;
                     });
                     var partial = homeTemplate(movie[0]);
