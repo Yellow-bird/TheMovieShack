@@ -4,11 +4,11 @@ export default (function () {
         CONTENT_MAX_LENGTH = 1200;
 
     var review = {
-        init: function(content, movieId, authorId) {
+        init: function(content, movieId, author) {
             var that = this;
             that.content = content;
             that.movieId = movieId;
-            that.authorId = authorId;
+            that.author = author;
             return that;
         }
     };
