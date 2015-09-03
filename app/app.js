@@ -21,11 +21,13 @@ var app = Sammy('#main-content', function () {
     });
     this.get('#/about', renderAbout);
     this.get('#/addamovie', renderAddMovie);
-    this.get('#/moviedetailsaliensample', renderMovieDetails);
+    this.get('#/details/:id', function () {
+        renderMovieDetails(this.params.id);
+    });
 
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var userIsSignedIn;
 
     backendServices.start();

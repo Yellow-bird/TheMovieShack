@@ -9,14 +9,6 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>test</td>
-            <td>Alien</td>
-            <td>1979</td>
-            <td>Sci-Fi</td>
-            <td><a href="#/moviedetailsaliensample" class="btn btn-default">View Details</a></td>
-        </tr>
-
 {{#each this}}
 
         <tr>
@@ -24,7 +16,7 @@
             <td>{{title}}</td>
             <td>{{year}}</td>
             <td>{{genre}}</td>
-            <td><a href="#/details/{{title}}&id:{{id}}" class="btn btn-default">View Details</a></td>
+            <td><a href="#/details/{{id}}" class="btn btn-default">View Details</a></td>
         </tr>
 {{/each}}
         </tbody>
