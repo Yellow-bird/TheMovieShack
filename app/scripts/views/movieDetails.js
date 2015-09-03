@@ -17,7 +17,9 @@ export function renderMovieDetails(id){
                     });
                     var partial = homeTemplate(movie[0]);
                     $mainContent.html(partial);
+
+                    addReview(movie);
                 }
-            })
-        })
+            });
+        });
 }
