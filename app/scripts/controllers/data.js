@@ -47,6 +47,13 @@ var data = (function () {
         return true;
     }
 
+    function userCurrentGetUsername() {
+        var currentUser = Parse.User.current(),
+            currentUsername = currentUser.getUsername();
+
+        return currentUsername;
+    }
+
     function userCanCreateMovie() {
         var currentUser = Parse.User.current(),
             isSuper;
@@ -150,6 +157,7 @@ var data = (function () {
             signUp: userSignUp,
             signIn: userSignIn,
             signedIn: userIsSignedIn,
+            getCurrentUsername: userCurrentGetUsername,
             canCreateMovie: userCanCreateMovie,
             signOut: userSignOut
         },
