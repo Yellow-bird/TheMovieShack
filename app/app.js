@@ -11,6 +11,14 @@ import data from 'scripts/controllers/data.js';
 var app = Sammy('#main-content', function () {
     this.get('#/home', renderHome);
     this.get('#/signinup', renderSignForm);
+    this.get('#/signout', function (context) {
+        data.users.signOut()
+            .then(function () {
+                $('#nav-item-sign-out').hide();
+                $('#nav-item-sign-in-up').show();
+                context.redirect('#/home');
+            });
+    });
     this.get('#/about', renderAbout);
     this.get('#/addamovie', renderAddMovie);
     this.get('#/moviedetailsaliensample', renderMovieDetails);
@@ -20,9 +28,6 @@ $(document).ready(function() {
     var userIsSignedIn;
 
     initializeParse();
-
-    // since there is no sign out for the moment...
-    localStorage.clear();
 
     userIsSignedIn = data.users.signedIn();
     if (userIsSignedIn) {
