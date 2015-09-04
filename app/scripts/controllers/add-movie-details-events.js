@@ -9,7 +9,9 @@ export function submitMovieDetails() {
         var movieGenre = $('#inputGenre').val();
         var movieDirector = $('#inputDirector').val();
         var movieSummary = $('#inputSummary').val();
-        var movie = createMovie(movieTitle, movieYear, movieGenre, movieDirector, movieSummary);
+        var movieWriters = $('#inputWriter').val();
+        var movieCast = $('#inputCast').val();
+        var movie = createMovie(movieTitle, movieYear, movieGenre, movieDirector, movieSummary, movieWriters, movieCast);
 
         data.movies.addToDataBase(movie).
             then(function (value) {

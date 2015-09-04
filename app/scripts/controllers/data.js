@@ -92,6 +92,8 @@ var data = (function () {
             newMovie.set('ratingsCount', 0);
             newMovie.set('director', movie.director);
             newMovie.set('summary', movie.summary);
+            newMovie.set('writers', movie.writers);
+            newMovie.set('cast', movie.cast);
 
             resolve(newMovie.save());
 
@@ -117,7 +119,9 @@ var data = (function () {
                             genre: movie.get('genre'),
                             rating: movie.get('rating'),
                             director: movie.get('director'),
-                            summary: movie.get('summary')
+                            summary: movie.get('summary'),
+                            writers: movie.get('writers'),
+                            cast: movie.get('cast'),
                         };
 
                         // testing
