@@ -182,15 +182,18 @@ var data = (function () {
             query.find()
                 .then(function (allReviews) {
                     allReviews.forEach(function (r) {
+                        console.log('----r');
+                        console.log(r);
                         var reviewInfo = {
-                            title: r.movieTitle,
-                            content: r.content,
-                            author: r.author
-                        }
+                            title: r.get('movieTitle'),
+                            content: r.get('content'),
+                            author: r.get('author')
+                        };
 
                         dbReviews.push(reviewInfo);
                     });
 
+                    console.log(dbReviews);
                     resolve(dbReviews);
                 });
         });
