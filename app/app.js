@@ -1,6 +1,7 @@
 import backendServices from 'scripts/backend-services.js';
 import {renderHome} from 'scripts/views/home.js';
 import {renderReviews} from 'scripts/views/reviews.js';
+import {renderMyReviews} from 'scripts/views/my-reviews.js';
 import {renderAbout} from 'scripts/views/about.js';
 import {renderSignForm} from 'scripts/sign-in-up.js';
 import {renderAddMovie} from 'scripts/views/addMovie.js';
@@ -20,6 +21,7 @@ var app = Sammy('#main-content', function () {
                 context.redirect('#/home');
             });
     });
+    this.get('#/myreviews', renderMyReviews);
     this.get('#/reviews', renderReviews);
     this.get('#/about', renderAbout);
     this.get('#/addamovie', renderAddMovie);

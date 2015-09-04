@@ -182,8 +182,6 @@ var data = (function () {
             query.find()
                 .then(function (allReviews) {
                     allReviews.forEach(function (r) {
-                        console.log('----r');
-                        console.log(r);
                         var reviewInfo = {
                             title: r.get('movieTitle'),
                             content: r.get('content'),
@@ -193,7 +191,36 @@ var data = (function () {
                         dbReviews.push(reviewInfo);
                     });
 
-                    console.log(dbReviews);
+                    resolve(dbReviews);
+                });
+        });
+
+        return promise;
+    }
+
+    function reviewGetByAuthorFromDatabase(wantedAuthor) {
+        var promise = new Promise(function (resolve, reject) {
+            var Review = Parse.Object.extend('Review'),
+                query = new Parse.Query(Review),
+                dbReviews = [],
+                currentAuthor;
+
+            query.find()
+                .then(function (allReviews) {
+                    allReviews.forEach(function (r) {
+                        currentAuthor = r.get('author');
+
+                        if (currentAuthor === wantedAuthor) {
+                            var reviewInfo = {
+                                title: r.get('movieTitle'),
+                                content: r.get('content')
+                            };
+
+                            dbReviews.push(reviewInfo);
+                        }
+
+                    });
+
                     resolve(dbReviews);
                 });
         });
@@ -218,7 +245,8 @@ var data = (function () {
         },
         reviews: {
             addToDataBase: reviewAddToDatabase,
-            getAllFromDatabase: reviewGetAllFromDatabase
+            getAllFromDatabase: reviewGetAllFromDatabase,
+            getByAuthor: reviewGetByAuthorFromDatabase
         }
     }
 }());
