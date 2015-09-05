@@ -32,3 +32,19 @@ footer{
   text-align: center;
   position: relative;
 }
+
+#sign-in-form input {
+  margin: 2%;
+}
+
+#sign-in-form button {
+  margin-left: 2%;
+}
+
+#sign-up-form input {
+  margin: 2%;
+}
+
+#sign-up-form button {
+  margin: 2%;
+}

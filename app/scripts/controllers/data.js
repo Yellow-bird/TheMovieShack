@@ -124,9 +124,6 @@ var data = (function () {
                             cast: movie.get('cast'),
                         };
 
-                        // testing
-                        //console.log(newMovie.originalId);
-
                         dbMovies.push(newMovie);
                     });
                     resolve(dbMovies);
@@ -150,8 +147,6 @@ var data = (function () {
 
                     resolve(dbMovie.save());
                 });
-
-
         });
 
         return promise;
@@ -222,7 +217,6 @@ var data = (function () {
 
                             dbReviews.push(reviewInfo);
                         }
-
                     });
 
                     resolve(dbReviews);
@@ -245,7 +239,6 @@ var data = (function () {
             addToDataBase: addMovieToDataBase,
             getAllMoviesFromDataBase: getAllMovieDetailsFromDataBase,
             setRating: setMovieRating
-
         },
         reviews: {
             addToDataBase: reviewAddToDatabase,

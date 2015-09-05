@@ -7,7 +7,6 @@ export function renderReviews() {
 
     data.reviews.getAllFromDatabase()
         .then(function (dbReviews) {
-            console.log(dbReviews);
             $.ajax('templates/reviews-form.html', {
                 success: function (template) {
                     template = $(template);
